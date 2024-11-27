@@ -1,0 +1,95 @@
+{%extends 'users/user_base.html'%}
+
+{%load static%}
+{%block contents%}
+<style>
+    form{
+        width: 70%;
+    }
+</style>
+<section id="aboutUs" class="page-section darkBg pDark pdingBtm30">
+    <div class="container">
+        <div class="heading text-center">
+            <center>
+                <form action="{% url 'Predict_Quality' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="row mb-3 ">
+                      <label class="col-sm-2 col-form-label">FixedAcidity</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.1 min="1" max="15" name="FixedAcidity" class="form-control" id="inputEmail3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">VolatileAcidity</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.01 min="0" max="1" name="VolatileAcidity" class="form-control" id="inputPassword3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">CitricAcid</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.01 min="0" max="1" name="CitricAcid" class="form-control" id="inputPassword3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">ResidualSugar</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.1 min="1" max="30" name="ResidualSugar" class="form-control" id="inputPassword3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">chlorides</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.001 min="0" max="1" name="chlorides" class="form-control" id="inputPassword3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">FreeSulfurDioxide</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.1 min="1" max="99" name="FreeSulfurDioxide" class="form-control" id="inputPassword3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">TotalSulfurDioxide</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.1 min="1" max="500" name="TotalSulfurDioxide" class="form-control" id="inputPassword3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">density</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.0001 min="1" max="2" name="density" class="form-control" id="inputPassword3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">pH</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.01 min="1" max="3" name="pH" class="form-control" id="inputPassword3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">sulphates</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.01 min="1" max="5" name="sulphates" class="form-control" id="inputPassword3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">alcohol</label>
+                      <div class="col-sm-5">
+                        <input type="number" step=0.1 min="1" max="25" name="alcohol" class="form-control" id="inputPassword3">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-7">
+                            <input type="submit" class="form-control" id="inputPassword3">
+                        </div>
+                    </div>
+                
+                    <h3>Whine Quality is {{res}}</h3>
+                    
+                </form>
+            </center>
+        </div>
+    </div>
+</section>
+{%endblock%}

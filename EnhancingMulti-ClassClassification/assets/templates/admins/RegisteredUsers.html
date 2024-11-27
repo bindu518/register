@@ -1,0 +1,52 @@
+{%extends 'admins/admin_base.html'%}
+{%load static%}
+{%block contents%}
+
+ <section id="aboutUs" class="page-section darkBg pDark pdingBtm30">
+        <div class="container">
+            <div class="heading text-center">
+                <!-- Heading -->
+                <h1>Enhancing Multi-Class Classification</h1>
+      <h2>One-VersusOne Strategy: A Type of Base Classifier Modification
+        and Weighted Voting Mechanism </h2>
+                <h3 align="center" style="color:white;">View RegisterUser Details</h3></p><br>
+        <table class="table table-bordered bg-light text-dark">
+            <thead>
+            <tr style="font-weight:bold; color: blueviolet;">
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Login ID</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Locality</th>
+                <th>Status</th>
+                <th>Activate</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in data %}
+            <tr style="color:rgb(71, 22, 22);font-weight:bold;">
+                <td>{{forloop.counter}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.loginid}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.locality}}</td>
+                <td>{{i.status}}</td>
+                {% if i.status == 'waiting' %}
+                <td><a class="btn-link" href="/AdminActivaUsers/?uid={{ i.id }}"
+                       style="color:green">Activate</a></td>
+                {% else %}
+                <td> Activated</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+     </div>
+
+            
+        <!--/.container-->
+    </section>
+{%endblock%}

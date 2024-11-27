@@ -1,0 +1,34 @@
+{%extends 'users/user_base.html'%}
+
+{%load static%}
+{%block contents%}
+ <section id="aboutUs" class="page-section darkBg pDark pdingBtm30">
+        <div class="container">
+            <div class="heading text-center">
+                <!-- Heading -->
+                <center>
+                <h2>FourClass </h2>
+                <table>
+                    <tr>
+                        <td>LR Accuracy</td>
+                        <td> : {{lr_score}}</td>
+                    </tr>
+                    <tr>
+                        <td>svm Accuracy</td>
+                        <td> : {{svm_score}}</td>
+                    </tr>
+                    <tr>
+                        <td>Binary LR Accuracy</td>
+                        <td> : {{bin_lr_score}}</td>
+                    </tr>
+                    <tr>
+                        <td>Binary SVM Accuracy</td>
+                        <td> : {{bin_svm_score}}</td>
+                    </tr>
+                </table>
+            </center>
+                </div>
+        </div>
+        <!--/.container-->
+    </section>
+{%endblock%}

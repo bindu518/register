@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block contents%}
+         <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>Machine Learning User Login</h3>
+                    <p>
+                         <form action="{%url 'AdminLoginCheck'%}" method="post" novalidate>
+                        {%csrf_token%}
+
+                        <div id="div_id_username" class="form-group"><h4>User Name<h4/>
+
+                            <div><input type="text" name="loginid" required autofocus autocapitalize="none"
+                                        autocomplete="username" maxlength="150" class="textinput textInput form-control"
+                                        required id="id_username"></div>
+                        </div>
+                        <div id="div_id_password" class="form-group"><h4>Password</h4>
+                            <div><input type="password" name="pswd" required autocomplete="current-password"
+                                        class="textinput textInput form-control" required id="id_password"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark mb-2">Login</button>
+
+                    </form>
+                    {% if messages %}
+                    {% for message in messages %}
+                    <font color='RED'> {{ message }}</font>
+                    {% endfor %}
+                    {% endif %}
+                    </p>
+                </div>
+            </div>
+
+{%endblock%}

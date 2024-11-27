@@ -1,0 +1,27 @@
+{%extends 'users/user_base.html'%}
+
+{%load static%}
+{%block contents%}
+ <section id="aboutUs" class="page-section darkBg pDark pdingBtm30">
+        <div class="container">
+            <div class="heading text-center">
+                <!-- Heading -->
+                <center>
+                <h2>WeightedVoting </h2>
+                <table>
+                    <tr>
+                        <td>LR Accuracy</td>
+                        <td> : {{acc_lr}}</td>
+                    </tr>
+                    <tr>
+                        <td>svm Accuracy</td>
+                        <td> : {{acc_svm}}</td>
+                    </tr>
+                  
+                </table>
+            </center>
+                </div>
+        </div>
+        <!--/.container-->
+    </section>
+{%endblock%}
